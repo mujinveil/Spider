@@ -243,7 +243,6 @@ class JobSpider:
                  t[1], t[2]))
 
         pprint(calc)
-
         with open(os.path.join("data", "post_salary.csv"),
 
                   "w+", encoding="utf-8") as f:
@@ -285,7 +284,7 @@ class JobSpider:
 
                                user="root",
 
-                               passwd="zhouyu560609",
+                               passwd="",
 
                                db="mysql",
 
