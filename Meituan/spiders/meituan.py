@@ -33,14 +33,14 @@ class MeituanSpider(scrapy.Spider):
          url = 'http://www.meituan.com/changecity/'
          yield scrapy.Request(url = url, headers = headers, cookies = cookies, callback = self.parse_city,dont_filter=True)
     '''
-    def start_requests(self):
+    def parse_city(self,response):
 
-         #cities = response.xpath("//div[@class='city-area']/span[@class='cities']/a/text()").extract()
+         cities = response.xpath("//div[@class='city-area']/span[@class='cities']/a/text()").extract()
          headers = self.get_header()
          cookies = self.get_cookie()
-         city='shenzhen'
-         for i in range(52):
-             url=self.s_url+city+'/pn'+str(i)
+         for city in cities:
+             city="".join(lazy_pinyin(city))
+             url=self.s_url+city
              yield scrapy.Request(url=url,headers=headers,cookies=cookies,callback=self.parse,dont_filter=True)
 
 
@@ -49,15 +49,15 @@ class MeituanSpider(scrapy.Spider):
     def parse(self, response):
          
         
-        #next_url=response.xpath('//div[@class="paginator-wrapper"]/ul/li[@class="page-link"]/a/@href').extract()
+        next_url=response.xpath('//div[@class="paginator-wrapper"]/ul/li[@class="page-link"]/a/@href').extract()
         hotel_url=response.xpath('//article[@class="poi-item"]/div[@class="info-wrapper"]/h3/a/@href').extract()
         headers = self.get_header()
         cookies = self.get_cookie()
         for url in hotel_url:
             scrapy.Request(url=url,headers=headers,cookies=cookies,callback=self.parse_hotel,dont_filter=True)
 
-        #for next_page  in next_url:
-             #yield scrapy.Request(url=next_page,headers=headers,cookies=cookies,callback=self.parse)
+        for next_page  in next_url:
+             yield scrapy.Request(url=next_page,headers=headers,cookies=cookies,callback=self.parse)
 
     def parse_hotel(self,response):
          item=MeituanItem()
