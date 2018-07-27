@@ -21,7 +21,7 @@ def log_in(driver):
     driver.get('https://data.pharmacodia.com/web/homePage/index')
     driver.find_element_by_xpath('//a[@class="undline_n login_color login_color_bg"]').click()
     driver.find_element_by_id('user_idname').send_keys('15013586458')
-    driver.find_element_by_id('user_idpsw').send_keys('zhouyu560609') 
+    driver.find_element_by_id('user_idpsw').send_keys('') 
     driver.find_element_by_id('user_login_btn').click()
     time.sleep(2)
     driver.find_element_by_id('login_get_code').click()
