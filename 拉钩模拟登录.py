@@ -37,7 +37,8 @@ class log_in(object):
 if __name__ == '__main__':
 
      login=log_in()
-     login.login('15565122198')
+     #账号
+     login.login()
 
 
 
