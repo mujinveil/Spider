@@ -84,7 +84,7 @@ def main(base_url):
 
 
 if __name__ == '__main__':
-   #bases_url=['http://www.haodiaoyu.com/jiqiao/tiaopiao/','http://www.haodiaoyu.com/jiqiao/siji/','http://www.haodiaoyu.com/jiqiao/diaofa/']
+  
    city_names=get_cities()
    for city_name in city_names:
       base_url='http://hotel.meituan.com/{0}'.format(city_name)
