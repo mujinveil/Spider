@@ -65,6 +65,7 @@ class crawl_hotel(object):
                 item['consume-num']=node.find_element_by_xpath('.//div[@class="poi-buy-num"]').text
                 item['price']=node.find_element_by_xpath('.//div[@class="poi-price"]/em').text
                 print(item)
+                print('开始注入数据')
                 collections.insert(dict(item))
                 #collections.update({'link':item.get('link')},{'$set':item},True)
 
@@ -79,9 +80,6 @@ def main(base_url):
     for i in range(total_page):
          i=i+1
          item=crawl.get_content(base_url,i)
-         print(item)
-
-         print('开始注入数据')
 
 
 
