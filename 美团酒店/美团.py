@@ -19,8 +19,7 @@ driver=webdriver.Chrome()
 
 class crawl_hotel(object):
       def __init__(self):
-          self.headers={'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-                        'Accept-Encoding':'gzip, deflate',
+          self.headers={'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',                        'Accept-Encoding':'gzip, deflate',
                         'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
                         'Cache-Control': 'max-age=0',
                         'Connection': 'keep-alive',
@@ -47,7 +46,7 @@ class crawl_hotel(object):
 
       def get_content(self,base_url,page):
            
-           url=base_url+'/pn={0}'.format(page)
+           url=base_url+'/pn{0}'.format(page)
            #driver.add_cookie(self.cookie)
            driver.get(url)
            wait=WebDriverWait(driver,10)
