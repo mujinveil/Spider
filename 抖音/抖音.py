@@ -21,7 +21,7 @@ def write_to_file(content):
 def response(flow):
      #print(flow.request.url)
      #print(flow.response.text)
-     #global collection
+     global collection
      url1='https://aweme.snssdk.com/aweme/v1/music/aweme/?music_id'
      url2='https://api.amemv.com/aweme/v1/music/aweme/?music_id'
      if flow.request.url.startswith(url1) or flow.request.url.startswith(url2):
