@@ -67,7 +67,7 @@ class crawl(object):
         url=data.get('url')
         post_data=data.get('post_data')
         meta=data.get('meta')
-        response=requests.post(url,data=post_data,headers=header_to_dict(self.headers)).content 
+        response=requests.post(url,data=post_data,headers=self.header_to_dict(self.headers)).content 
         content=json.loads(response.decode('utf-8'))
         resumeids=content.get['resumeHtmlId']
         for resumeid in resumeids:
@@ -86,7 +86,7 @@ class crawl(object):
         external_id=data.get('external_id')
         doc=collection.find_one({'external_id':external_id})
         if doc is None:
-            response=requests.post(url,data=post_data,headers=header_to_dict(self.headers)).content
+            response=requests.post(url,data=post_data,headers=self.header_to_dict(self.headers)).content
             content=json.loads(response.decode('utf-8'))
             html=content.get['jsonHtml']
             if html:
