@@ -1,3 +1,6 @@
+
+
+
 #coding=utf-8
 import requests
 import re
@@ -28,6 +31,20 @@ def get_videos():
 if __name__ == '__main__':
 
      get_videos()
+     
+     
+brew install imagemagick 
+brew install tesseract --all-languages 
+pip3 install tesserocr pillow
+
+
+import tesserocr 
+from PIL import Image 
+image=Image.open('image.png')
+print(tesserocr.image_to_text(image))
+
+
+print(tesserocr.file_to_text('image.png'))
 
 
 
