@@ -232,8 +232,8 @@ if __name__ == "__main__":
     '''
 
     crawler = Crawler()
-    gevent.monkey.patch_all()
-    crawler = Crawler()
+    
+  
     p = Pool(8)
     p.apply_async(crawler.get_proxy)
     time.sleep(1)
