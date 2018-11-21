@@ -278,7 +278,7 @@ keywords_1 = [
 
 def main():
     crawl = Crawler()
-    gevent.monkey.patch_all()
+    
     p = Pool(7)
     p.apply_async(crawl.proxy)
     for i in range(6):
