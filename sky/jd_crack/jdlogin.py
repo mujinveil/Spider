@@ -82,7 +82,7 @@ class Crack():
 
       self.wait.until(EC.presence_of_element_located((By.XPATH,"//a[contains(text(),'账户登录')]"))).click()
       self.wait.until(EC.presence_of_element_located((By.ID,'loginname'))).send_keys('mujin4705')
-      self.wait.until(EC.presence_of_element_located((By.ID,'nloginpwd'))).send_keys('12542')
+      self.wait.until(EC.presence_of_element_located((By.ID,'nloginpwd'))).send_keys('66666')
       self.wait.until(EC.presence_of_element_located((By.ID,'loginsubmit'))).click()
       time.sleep(5)
       
