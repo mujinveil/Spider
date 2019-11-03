@@ -141,7 +141,7 @@ if __name__ == "__main__":
     wait = WebDriverWait(driver, 10)
     login()
 
-    search('避孕套')
+    search('手机')
 
     for i in range(100):
         index_page(i + 1)
