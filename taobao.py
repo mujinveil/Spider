@@ -33,9 +33,9 @@ def login():
     login_before = wait.until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'密码登录')]")))
     login_before.click()
     send_name = wait.until(EC.presence_of_element_located((By.ID, 'TPL_username_1')))
-    send_name.send_keys('15013586458')
+    send_name.send_keys('')
     send_pd = wait.until(EC.presence_of_element_located((By.ID, 'TPL_password_1')))
-    send_pd.send_keys('560609')
+    send_pd.send_keys('')
     login = wait.until(EC.presence_of_element_located((By.ID, 'J_SubmitStatic')))
     login.click()
     time.sleep(3)
@@ -47,7 +47,7 @@ def login():
     send_passwd = wait.until(EC.presence_of_element_located((By.ID, 'TPL_password_1')))
     send_passwd.clear()
 
-    send_passwd.send_keys('zhouyu560609')
+    send_passwd.send_keys('')
     login = wait.until(EC.presence_of_element_located((By.ID, 'J_SubmitStatic')))
     login.click()
 
